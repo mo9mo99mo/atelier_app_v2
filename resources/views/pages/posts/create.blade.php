@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<!--@php-->
-<!--dd($product->id);-->
-<!--@endphp-->
+<!--{{--@php--}}-->
+<!--{{--dd($product->id);--}}-->
+<!--{{--@endphp--}}-->
 <section>
     <h1>作品の制作工程を登録</h1>
     <!-- エラー表示用 -->
