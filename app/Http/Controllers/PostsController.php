@@ -37,20 +37,23 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //
-        // dd($request->all());
+        // dd($request->posts_produsts_id);
+        
+        
         
         if ($request->file('posts_img_path')->isValid()) { //アップロード成功したか確認
             //アップロードするファイル名を取得
             $fileName = $request->file('posts_img_path')->getClientOriginalName();
             //ファイルをアップロード
             $request->file('posts_img_path')->storeAs('public/images', $fileName);
-            // dd($request->all());
-
+            // dd($request->posts_produsts_id);
+            
             //DBに情報を保存
             $post = new Post();
+            // dd($request->posts_produsts_id);
+            $post->posts_products_id = intval($request->posts_products_id); //数値型に変換
             $post->posts_img_path = 'storage/images/' . $fileName;
             $post->posts_name = $request->posts_name;
-            $post->posts_products_id = $request->posts_products_id;
             // $post->product->id->posts_products_id; //relation
             $post->save();
             return redirect(route('index'));
