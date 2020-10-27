@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('product_name', 100); //作品タイトル
+            $table->string('product_name', 100); //20201025追加:作品タイトル
             $table->string('product_cap', 200)->nullable(); //作品説明
             $table->unsignedBigInteger('product_category_id')->nullable(); //カテゴリID
             $table->foreignId('product_user_id');

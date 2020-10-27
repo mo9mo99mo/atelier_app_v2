@@ -26,19 +26,19 @@ Route::get('/', 'IndexController@index')->name('index');
 // })->name('users.show');
 
 //[login] mypage：マイページ
-// Route::resource('mypage', 'MypageController')->only([
-//   'index', 'store', 'edit', 'update'
-// ]);
+Route::resource('mypage', 'MypageController')->only([
+  'index', 'store', 'edit', 'update'
+]);
 
 //[login] products:作品情報投稿
-// Route::resource('products', 'ProductsController')->only([
-//   'create', 'index', 'store'
-// ]);
+Route::resource('products', 'ProductsController')->only([
+  'create', 'index', 'store'
+]);
 
-//[login] posts:制作工程投稿
-// Route::resource('posts', 'PostsController')->only([
-//   'create', 'index', 'store'
-// ]);
+// [login] posts:制作工程投稿
+Route::resource('posts', 'PostsController')->only([
+  'create', 'index', 'store'
+]);
 
 
 

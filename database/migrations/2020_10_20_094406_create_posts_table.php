@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('posts_products_id');//追加
+            $table->foreignId('posts_products_id');//20201025追加
             $table->string('posts_img_path'); //追加
             $table->string('posts_name', 100); //工程タイトル
             $table->string('posts_cap')->nullable(); //工程説明

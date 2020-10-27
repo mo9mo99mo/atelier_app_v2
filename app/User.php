@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    /**
+     * 作品情報を取得（1対多）
+     */
+    public function products()
+    {
+        return $this->hasMany('App\Product', 'product_user_id', 'id');
+    }
 }
