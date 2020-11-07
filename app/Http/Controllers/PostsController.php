@@ -15,7 +15,10 @@ class PostsController extends Controller
     public function index()
     {
         //
-        return view('pages.posts.create');
+        //$posts = Post::all();
+        $posts = Post::latest()->get();
+        // dd($posts);
+        return view('pages.posts.index', compact('posts'));
     }
 
     /**
@@ -26,6 +29,7 @@ class PostsController extends Controller
     public function create()
     {
         //
+        return view('pages.posts.create');
     }
 
     /**

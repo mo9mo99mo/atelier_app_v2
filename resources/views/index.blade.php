@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <section>
+    <!--@php-->
+    <!--dd($products);-->
+    <!--@endphp-->
     <!-- 工程が追加された作品を表示（foreachする）-->
     @foreach($products as $product)
 
@@ -10,7 +13,7 @@
             <!-- 作品工程（詳細）ページへ遷移-->
             <a href="{{ url('/pages') }}">
                 <!--工程画像 posts_img-->
-                {{-- <img src="{{ asset('/uploads/photo001.jpg') }}" class="posts_img"></img> --}}
+                {{--<img src="{{ $product->posts->posts_img_path }}" class="posts_img">--}}
             </a>
         </div>
         <div>

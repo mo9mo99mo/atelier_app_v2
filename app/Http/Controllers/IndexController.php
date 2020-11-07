@@ -13,6 +13,8 @@ class IndexController extends Controller
         $products = Product::latest()->get();
         // dd($products);
         $products->load('user');
+        $products->load('posts');
+        // dd($products->posts->id);
         return view('index', ['products' => $products]);
     }
 }

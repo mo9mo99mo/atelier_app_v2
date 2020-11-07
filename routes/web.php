@@ -35,7 +35,7 @@ Route::resource('products', 'ProductsController')->only([
   'create', 'index', 'store'
 ]);
 
-// [login] posts:制作工程投稿
+//[login] posts:制作工程投稿
 Route::resource('posts', 'PostsController')->only([
   'create', 'index', 'store'
 ]);

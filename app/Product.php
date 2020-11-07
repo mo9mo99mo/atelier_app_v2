@@ -8,7 +8,8 @@ class Product extends Model
 {
     //
     protected $fillable = [
-        'product_user_id'
+        'product_user_id',
+        'posts_products_id'
     ];
 
     //relation 1対1
