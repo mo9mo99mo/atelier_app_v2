@@ -97,6 +97,22 @@ class PostSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
             ]
+            ,[
+            'posts_products_id' => '3',
+            'posts_img_path' => 'storage/images/example001.jpeg',
+            'posts_name' => '工程1：刷る',
+            'posts_cap' => 'シルクスクリーン版の上からインクを刷る',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+            ]
+            ,[
+            'posts_products_id' => '3',
+            'posts_img_path' => 'storage/images/example002.jpeg',
+            'posts_name' => '工程2：パターンを刷る',
+            'posts_cap' => 'パターンをつなげていく',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+            ]
         ]);
     }
 }

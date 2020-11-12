@@ -18,8 +18,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
+        $products = Product::all();
+        // dd($products);
         //$user = Auth::user();   #ログインユーザー情報を取得
-        return view('pages.products.create');
+        return view('pages.products.index', compact('products'));
     }
 
     /**
@@ -30,8 +32,8 @@ class ProductsController extends Controller
     //データ追加画面へ移動する処理
     public function create()
     {
-        //
-        //return view('pages.products.create');
+        //$user = Auth::user();   #ログインユーザー情報を取得
+        return view('pages.products.create');
     }
 
     /**
@@ -67,11 +69,13 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    //データを取得する処理
-    // public function show($id)
-    // {
-    //     //
-    // }
+    // データを取得する処理
+    public function show($id)
+    {
+        // dd($id);
+        $product = Product::find($id);
+        return view('pages.products.show', compact('product'));
+    }
 
     /**
      * Show the form for editing the specified resource.

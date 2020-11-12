@@ -19,7 +19,7 @@
         <div>
             <!-- 作品工程（詳細）ページへ遷移-->
             <a href="#">
-                <!--作品名 21_products.product_name-->
+                <!--作品名 products.product_name-->
                 <h2>{{ $product->product_name }}</h2>
             </a>
         </div>

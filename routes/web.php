@@ -21,8 +21,9 @@ Route::get('/', 'IndexController@index')->name('index');
 // });
 
 //ユーザーページを表示
-// Route::get('users/1', function () {
+// Route::get('user/{id}', function ($id) {
 //   return view('mypage');
+
 // })->name('users.show');
 
 //[login] mypage：マイページ
@@ -32,13 +33,17 @@ Route::resource('mypage', 'MypageController')->only([
 
 //[login] products:作品情報投稿
 Route::resource('products', 'ProductsController')->only([
-  'create', 'index', 'store'
+  'create', 'index', 'store', 'show',
 ]);
+Route::get('products/{id}', 'ProdustsController@show')->name('pages.posts.show');
+
 
 //[login] posts:制作工程投稿
 Route::resource('posts', 'PostsController')->only([
   'create', 'index', 'store'
 ]);
+//[login] posts:制作工程投稿
+// Route::get('posts/{posts_products_id}', 'PostsController@index')->name('pages.posts.index');
 
 
 
