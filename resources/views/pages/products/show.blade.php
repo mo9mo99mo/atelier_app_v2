@@ -9,6 +9,12 @@
     <p>{{ $product->id }}</p>
     <p>{{ $product->product_name }}</p>
     
+    <!-- 作者情報 -->
+    <!-- ユーザー名 -->
+    <p>user.id:{{ $product->user->id }}, {{ $product->user->name }}</p>
+    <!-- ユーザーアイコン -->
+    <p><img src="{{ asset($product->user->users_icon_path) }}"></p>
+    
     
    @foreach($product->posts as $post)
     <p>id{{ $post->id }}</p>

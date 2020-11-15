@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // 以下追加
 use Validator;
+use App\User;
 use App\Product;
 use App\Post;
 
