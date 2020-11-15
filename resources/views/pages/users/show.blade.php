@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+users.show.blade.php
 <!-- user profile -->
 <section>
     <div>
@@ -11,7 +12,7 @@
         </div>
         <!--11_users.users_Icon_path-->
         <div>
-            <img src="{{$user->users_icon_path}}" alt="profile_img">
+            <img src="{{ asset($user->users_icon_path) }}" alt="profile_img">
         </div>
         <!--11_users.user_name-->
         <h1>{{$user->name}}</h1>
@@ -109,7 +110,7 @@
             <!-- 作品工程（詳細）ページへ遷移-->
                 <!--工程画像 posts_img -->
                 @if(isset( $product->posts[0]->posts_img_path ))
-                <img src="{{ $product->posts[0]->posts_img_path }}" class="posts_img">
+                <img src="{{ asset($product->posts[0]->posts_img_path) }}" class="posts_img">
                 @endif
         </div>
         <div>
@@ -125,7 +126,7 @@
             <a href="{{ url('/mypage') }}">
                 <!--11_users.users_Icon_path-->
                 <div>
-                    <img src="{{ $product->user->users_icon_path }}" alt="profile_img" class="img_crop_circle">
+                    <img src="{{ asset($product->user->users_icon_path) }}" alt="profile_img" class="img_crop_circle">
                 </div>
                 <!--11_users.user_name-->
                 <h3>{{ $product->user->name }}</h3>

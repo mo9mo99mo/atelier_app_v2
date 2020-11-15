@@ -13,7 +13,7 @@
     <!-- ユーザー名 -->
     <p>user.id:{{ $product->user->id }}, {{ $product->user->name }}</p>
     <!-- ユーザーアイコン -->
-    <p><img src="{{ asset($product->user->users_icon_path) }}"></p>
+    <p><img src="{{ asset($product->user->users_icon_path) }}" class="img_crop_circle"></p>
     
     
     @foreach($product->posts as $post)

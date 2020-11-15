@@ -30,6 +30,12 @@ Route::get('/', 'IndexController@index')->name('index');
 Route::resource('mypage', 'MypageController')->only([
   'index', 'store', 'edit', 'update'
 ]);
+//[login] users：ユーザーページ
+// Route::resource('users', 'UsersController')->only([
+//   'index', 'store', 'edit', 'update'
+// ]);
+Route::get('users/{id}', 'UsersController@show')->name('pages.users.show');
+
 
 //[login] products:作品情報投稿
 Route::resource('products', 'ProductsController')->only([

@@ -19,7 +19,7 @@
         <!--ログイン状態で表示を切替-->
         <!-- login -->
         @auth
-        <a href="{{ url('/mypage') }}"><img src="{{ Auth::user()->users_icon_path }}" class="img_crop_circle"><br>マイページ</a>
+        <a href="{{ url('/mypage') }}"><img src="{{ asset(Auth::user()->users_icon_path) }}" class="img_crop_circle"><br>マイページ</a>
         @endauth
         <!-- logout -->
         @guest

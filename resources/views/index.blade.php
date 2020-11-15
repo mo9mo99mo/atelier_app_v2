@@ -27,14 +27,14 @@ index.blade.php
         <!-- user info -->
         <div>
             <!-- ユーザーページへ遷移-->
-            {{--<a href="{{ route('users.show', [ $product->user->id ]) }}">--}}
+            <a href="{{ route('pages.users.show', [ $product->user->id ]) }}">
                 <!--users.users_Icon_path-->
                 <div>
                     <img src="{{ $product->user->users_icon_path }}" alt="profile_img" class="img_crop_circle">
                 </div>
                 <!--users.user_name-->
                 <div>{{ $product->user->name }}</div>
-            <!--</a>-->
+            </a>
         </div>
         <div>
             <!-- 作品説明 products.product_cap -->
