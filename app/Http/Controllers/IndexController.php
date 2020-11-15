@@ -12,9 +12,11 @@ class IndexController extends Controller
     {
         $products = Product::latest()->get();
         // dd($products);
-        $products->load('user');
-        $products->load('posts');
-        // dd($products->posts->id);
+        // トップページにユーザーと工程情報も表示させる
+        // $products->load('user');//relation
+        $products->load('posts');//relation
+        // $posts_data = Product::find(3)->posts()->first();
+        // dd($products);
         return view('index', ['products' => $products]);
     }
 }

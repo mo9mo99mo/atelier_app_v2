@@ -21,7 +21,7 @@ class Product extends Model
     public function posts()
     {
         return $this->hasMany('App\Post', 'posts_products_id', 'id');
-        //追加の引数として、外部キー(foreign_key)とローカルキー(local_key)をhasManyメソッドに渡さないとエラーになる。
+        // 追加の引数として、外部キー(foreign_key)とローカルキー(local_key)をhasManyメソッドに渡さないとエラーになる。
         // return $this->hasMany('App\Post');
     }
 }

@@ -113,6 +113,22 @@ class PostSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
             ]
+            ,[
+            'posts_products_id' => '1',
+            'posts_img_path' => 'storage/images/kinmokusei.jpg',
+            'posts_name' => '工程1：下書き',
+            'posts_cap' => '下書き',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+            ]
+            ,[
+            'posts_products_id' => '4',
+            'posts_img_path' => 'storage/images/test001.jpg',
+            'posts_name' => '工程1：スケッチ',
+            'posts_cap' => 'スケッチする',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+            ]
         ]);
     }
 }

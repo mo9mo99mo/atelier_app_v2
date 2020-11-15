@@ -1,24 +1,25 @@
 @extends('layouts.app')
 @section('content')
+index.blade.php
 <section>
-    <!--@php-->
-    <!--dd($products);-->
-    <!--@endphp-->
+   {{-- @php
+    dd($products);
+    @endphp--}}
+    
     <!-- 工程が追加された作品を表示（foreachする）-->
     @foreach($products as $product)
 
     <div class="posts_product">
-        <!-- products img-->
+        <!--工程画像 posts_img-->
         <div>
-            <!-- 作品工程（詳細）ページへ遷移-->
-            <a href="{{ url('/pages') }}">
-                <!--工程画像 posts_img-->
-                {{--<img src="{{ $product->posts->posts_img_path }}" class="posts_img">--}}
-            </a>
+            <!-- 制作工程：最初の画像を表示-->
+            @if(isset( $product->posts[0]->posts_img_path ))
+            <img src="{{ $product->posts[0]->posts_img_path }}" class="posts_img">
+            @endif
         </div>
         <div>
             <!-- 作品工程（詳細）ページへ遷移-->
-            <a href="#">
+            <a href="{{ route('products.show', [ $product->id ]) }}">
                 <!--作品名 products.product_name-->
                 <h2>{{ $product->product_name }}</h2>
             </a>
@@ -26,14 +27,14 @@
         <!-- user info -->
         <div>
             <!-- ユーザーページへ遷移-->
-            {{-- <a href="{{ route('users.show') }}"> --}}
+            {{--<a href="{{ route('users.show', [ $product->user->id ]) }}">--}}
                 <!--users.users_Icon_path-->
                 <div>
-                    {{-- <img src="{{ $product->user->users_icon_path }}" alt="profile_img"> --}}
+                    <img src="{{ $product->user->users_icon_path }}" alt="profile_img" class="img_crop_circle">
                 </div>
                 <!--users.user_name-->
-                <h3>{{ $product->user->name }}</h3>
-            </a>
+                <div>{{ $product->user->name }}</div>
+            <!--</a>-->
         </div>
         <div>
             <!-- 作品説明 products.product_cap -->
