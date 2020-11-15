@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 
+//追加
+
+
 class PostsController extends Controller
 {
     /**

@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-// 以下2行追加
+// 以下追加
 use Validator;
 use App\Product;
+use App\Post;
 
 
 class ProductsController extends Controller
@@ -74,6 +75,12 @@ class ProductsController extends Controller
     {
         // dd($id);
         $product = Product::find($id);
+        // posts table取得 主→従
+        // $post = $product->posts;
+        // $post = Product::find($id)->posts;
+        // $post = Post::find(2)->products;
+        // $posts_data = Product::find($id)->posts;
+        // dd($post);
         return view('pages.products.show', compact('product'));
     }
 
