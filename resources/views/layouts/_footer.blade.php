@@ -1,6 +1,6 @@
 <div class="footer_btn_area">
     <div>
-        <a href="#">
+        <a href="{{ url('/') }}">
             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14 5.914L9.5 1.414L2.414 8.5H4V16.5H7V10.5H12V16.5H15V8.5H16.586L15 6.914V3.5H14V5.914ZM0 9.5L9.5 0L13 3.5V2.5H16V6.5L19 9.5H16V17.498H11V11.498H8V17.498H3V9.5H0Z" fill="#999999" />
             </svg>
@@ -35,7 +35,7 @@
         @endguest
     </div>
     <div>
-        <a href="{{ url('/products') }}" class="a_color_posts">
+        <a href="{{ route('products.create') }}" class="a_color_posts">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.6665 17.3333V16H14.6665V8H15.9998V16H23.9998V17.3333H15.9998V25.3333H14.6665V17.3333H6.6665Z" fill="#9FD2D6"/>
             </svg>

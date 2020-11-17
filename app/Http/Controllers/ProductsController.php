@@ -35,7 +35,14 @@ class ProductsController extends Controller
     public function create()
     {
         //$user = Auth::user();   #ログインユーザー情報を取得
-        return view('pages.products.create');
+        //ログインチェック
+        if (Auth::check()) {
+            //ログイン
+            return view('pages.products.create');
+        } else {
+            //非ログイン
+            return redirect('/login');
+        }
     }
 
     /**
