@@ -53,11 +53,11 @@ class PostsController extends Controller
             $fileName = $request->file('posts_img_path')->getClientOriginalName();
             //ファイルをアップロード
             $request->file('posts_img_path')->storeAs('public/images', $fileName);
-            // dd($request->posts_produsts_id);
+            dd($request->posts_produsts_id);
             
             //DBに情報を保存
             $post = new Post();
-            // dd($request->posts_produsts_id);
+            // dd($post);
             $post->posts_products_id = intval($request->posts_products_id); //数値型に変換
             $post->posts_img_path = 'storage/images/' . $fileName;
             $post->posts_name = $request->posts_name;

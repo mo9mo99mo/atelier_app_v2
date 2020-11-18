@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-index.blade.php
+<!--index.blade.php-->
 <section>
    {{-- @php
     dd($products);
@@ -9,9 +9,9 @@ index.blade.php
     <!-- 工程が追加された作品を表示（foreachする）-->
     @foreach($products as $product)
 
-    <div class="posts_product">
+    <div class="block_product">
         <!--工程画像 posts_img-->
-        <div>
+        <div class="block_product_img">
             <!-- 制作工程：最初の画像を表示-->
             @if(isset( $product->posts[0]->posts_img_path ))
             <img src="{{ $product->posts[0]->posts_img_path }}" class="posts_img">
@@ -21,22 +21,26 @@ index.blade.php
             <!-- 作品工程（詳細）ページへ遷移-->
             <a href="{{ route('products.show', [ $product->id ]) }}">
                 <!--作品名 products.product_name-->
-                <h2>{{ $product->product_name }}</h2>
+                <h2 class="block_product_ttl">{{ $product->product_name }}</h2>
             </a>
         </div>
         <!-- user info -->
-        <div>
+        <div class="block_product_userinfo">
             <!-- ユーザーページへ遷移-->
-            <a href="{{ route('pages.users.show', [ $product->user->id ]) }}">
-                <!--users.users_Icon_path-->
-                <div>
+            <!--users.users_Icon_path-->
+            <div class="userinfo_icon">
+                <a href="{{ route('pages.users.show', [ $product->user->id ]) }}">
                     <img src="{{ $product->user->users_icon_path }}" alt="profile_img" class="img_crop_circle">
-                </div>
+                </a>
+            </div>
                 <!--users.user_name-->
-                <div>{{ $product->user->name }}</div>
-            </a>
+            <div class="userinfo_name">
+                <a href="{{ route('pages.users.show', [ $product->user->id ]) }}">
+                    {{ $product->user->name }}
+                </a>
+            </div>
         </div>
-        <div>
+        <div class="product_caption">
             <!-- 作品説明 products.product_cap -->
             <p>{{ $product->product_cap }}</p>
         </div>

@@ -113,7 +113,7 @@ users.show.blade.php
                 <img src="{{ asset($product->posts[0]->posts_img_path) }}" class="posts_img">
                 @endif
         </div>
-        <div>
+        <div class="block_product_userinfo">
             <!-- 作品工程（詳細）ページへ遷移-->
             <a href="{{ route('products.show', [ $product->id ]) }}">
                 <!--作品名/products.product_name-->
